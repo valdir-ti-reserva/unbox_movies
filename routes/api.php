@@ -18,21 +18,16 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/', function(Request $request) {
-    return [ 'movies' => true ];
-});
-Route::get('/movies', function(Request $request) {
-    return [ 'movies' => true ];
-});
-Route::get('/trending', function(Request $request) {
-    return [ 'trending' => true ];
-});
-Route::get('/discover', function(Request $request) {
-    return [ 'discover' => true ];
-});
-Route::get('/genders', function(Request $request) {
-    return [ 'genders' => true ];
-});
+Route::get('/', 'MovieController@all');
+Route::get('/movies', 'MovieController@all');
+
+Route::get('/genders', 'GenderController@all');
+
+Route::get('/trending', 'MovieController@trending');
+
+Route::get('/discover', 'MovieController@discover');
+
 Route::get('/series', function(Request $request) {
     return [ 'series' => true ];
 });
+
