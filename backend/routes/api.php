@@ -23,7 +23,7 @@ Route::get('/trending', 'MovieController@trending');
 
 Route::get('/discover', 'MovieController@discover');
 
-Route::get('/series', function(Request $request) {
-    return [ 'series' => true ];
-});
+Route::get('/series', 'SerieController@all');
+Route::get('/series-trending', 'SerieController@trending');
+Route::get('/series-discover', 'SerieController@discover');
 

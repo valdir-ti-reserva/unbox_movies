@@ -3,7 +3,7 @@ import api from '../Api';
 import './Banner.css'
 import maskPoster from '../assets/images/mask_poster.jpg';
 
-function Banner() {
+function Banner({url}) {
 
   const [movie, setMovie] = useState([]);
   const [poster, setPoster] = useState('')
@@ -11,7 +11,7 @@ function Banner() {
   useEffect(() => {
     
     async function fetchData(){
-      const request = await api.get('/trending');
+      const request = await api.get(`/${url}`);
       setMovie(request.data.result[
           Math.floor(Math.random() * request.data.result.length - 1)
         ]
