@@ -1,0 +1,23 @@
+.details{
+  padding: 10px 10px 15px 10px;
+
+}
+
+.details_sumary{
+  padding-bottom: 10px;
+  padding-top: 5p
+}
+
+.details_title{
+  padding-bottom: 10px;
+  padding-top: 5px;
+}
+
+.details_duration{
+  padding-bottom: 10px;
+  padding-top: 5px;
+}
+
+.title{
+  color: #ffff00;
+} 

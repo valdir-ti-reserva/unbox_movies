@@ -21,13 +21,14 @@ class MovieController extends Controller
                 'overview'=>$movie->overview,
                 'poster'=>$movie->poster,
                 'gender'=>$movie->gender_name,
+                'name'=>$movie->name,
             ];
         }
 
         return $this->array;
     }
 
-    public function trending(){
+    public function trending(Request $request){
 
         $movies = Movie::where('trending', 1)
                                 ->orderBy('title', 'desc')
@@ -41,13 +42,14 @@ class MovieController extends Controller
                 'overview'=>$movie->overview,
                 'poster'=>$movie->poster,
                 'gender'=>$movie->gender_name,
+                'name'=>$movie->name,
             ];
         }
 
         return $this->array;
     }
 
-    public function discover(){
+    public function discover(Request $request){
 
         $movies = Movie::where('discover', 1)
                                 ->orderBy('title', 'desc')
@@ -60,7 +62,10 @@ class MovieController extends Controller
                 'title'=>$movie->title,
                 'overview'=>$movie->overview,
                 'poster'=>$movie->poster,
+                'duration'=>$movie->duration,
+                'original_title'=>$movie->original_title,
                 'gender'=>$movie->gender_name,
+                'name'=>$movie->name,
             ];
         }
 

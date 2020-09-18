@@ -1,14 +1,21 @@
 import React from 'react';
 import './App.css';
+import Banner from './components/Banner'
+import Row from './components/Row'
+import Navbar from './components/Navbar'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Estado incial da aplicação
-        </p>
-      </header>
+    <div className="app">
+      <Navbar />
+
+      <Banner />
+
+      <Row title="Trendings" url="trending"/>
+      <Row title="Movies" url="movies"/>
+      <Row title="Discover" url="discover"/>
+      {/* <Row title="Series" url="series"/> */}
+      
     </div>
   );
 }
